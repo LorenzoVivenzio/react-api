@@ -23,16 +23,26 @@ function App() {
 
   return (
     <>
+    <header className="bg-dark">
+      <h1 className="text-white  text-center p-3">Attori</h1>
+    </header>
     <div className="container">
-      <h1 className="text-center mt-3">Attori</h1>
+      
       <div className="row">
-        {attori.map((attore) =>(
-        <div className="col-4">
-          <div className="card">
-            <h3 className="text-center">{attore.name}</h3>
-            <img src={attore.image} alt="" />
-            <p className="p-3">biography: {attore.biography}</p>
+        {attori.map((attore, index) =>(
+        <div key={index}
+        className="col-4 mb-4">
+
+          <div className="card bg-dark rounded-3 text-center">
+            
+            <h3 className="text-center m-3 text-white">{attore.name}</h3>
+            <img className="p-3 rounded-3" src={attore.image} alt="" />
+            <p className="text-danger">{attore.birth_year} <span className="text-warning">{attore.nationality}</span></p>
+            <p className="p-3 text-white"><span className="text-info">Biography:</span>{attore.biography}</p>
+            <p className="text-danger"></p>
+            
           </div>
+
         </div>
         ))}
 
